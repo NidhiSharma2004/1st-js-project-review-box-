@@ -18,11 +18,11 @@ var images = new Array();
 var imgIndex = 0;
 var prevIndex = 4;
 
-images[0] = "/images/boy1.jpg";
-images[1] = "/images/boy2.jpg";
-images[2] = "/images/boy3.jpg";
-images[3] = "/images/girl1.jpg";
-images[4] = "/images/girl2.jpg";
+images[0] = "./assets/images/boy1.jpg";
+images[1] = "./assets/images/boy2.jpg";
+images[2] = "./assets/images/boy3.jpg";
+images[3] = "./assets/images/girl1.jpg";
+images[4] = "./assets/images/girl2.jpg";
 
 var myImg = document.getElementById("images");
 
