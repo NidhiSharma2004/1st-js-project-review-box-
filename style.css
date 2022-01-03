@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: black;
+    color: white;
+}
+#img{
+    height: 164px;
+    width: 163px;
+}
+#img img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+.container{
+    height: 430px;
+    border: 3px solid;
+    width: 700px;
+    margin: 68px  auto ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgb(31, 27, 27);
+    border-radius: 6px;
+    text-align: center;
+}
+.nameContainer{
+    font-size: 1.6rem;
+    color: rgb(14, 149, 131);
+    margin-bottom: 1.3rem;
+}
+.reviewContainer{
+    margin: 0px 1.3rem;
+    /* font-size: 1.2rem; */
+    /* font-weight: 600; */
+}
+.btnContainer{
+    margin-top: 1.4rem;
+}
+#btn{
+    width: 6rem;
+    height: 3rem;
+    background: rgb(7, 103, 112);
+    color: wheat;
+    border: none;
+    border-radius: 6px;  
+    margin-top: 1.2rem;
+    cursor: pointer;
+}
+
+.slider{
+    width: 63px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+    cursor: pointer;
+}
