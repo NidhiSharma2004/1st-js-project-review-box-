@@ -158,7 +158,7 @@ body{
     width: 400px;
     height: 300px;
     text-align: center;
-    display: grid;
+    display: none;
     align-items: center;
     justify-content: center;
     background: rgba(194, 189, 181, 0.972);
@@ -167,7 +167,6 @@ body{
     bottom: 13%;
     left: 36%;
     font-size: 1.3rem;
-    display: none;
 }
 .btn2{
     position: absolute;
@@ -199,16 +198,18 @@ body{
     padding: 10px;
     width: 100%;
     margin-bottom: 1rem;
+    cursor: pointer;
     color: rgb(124, 6, 26);
 }
 .question{
     display: flex;
-    width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
 }
-.question .icn{
-    cursor: pointer;
-    font-size: 1.6rem;
+
+.questionIcn{
+    
+    font-size: 1.6rem; 
+  
 }
 .question-container .answer{
     display: none;

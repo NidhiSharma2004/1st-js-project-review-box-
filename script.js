@@ -25,13 +25,11 @@ function changeImg() {
         console.log(imgIndex)
         myImg.src = images[imgIndex];
         imgIndex++;
-        console.log(imgIndex)
     }
     if(imgIndex==images.length){
         imgIndex = 0;
     }
      myImg.src=images[imgIndex]
-     console.log(myImg.src)
 }
 
 // PREVIOUS IMAGE INDEX
@@ -158,25 +156,47 @@ hmbrgr.addEventListener("click",function(e){
     }
 })
 
-// // MODAL PROJECT JS
-// var nextbtn = document.getElementById("nextbtn");
-// var alertdiv = document.querySelector(".alertdiv");
+// MODAL PROJECT JS
+var nextbtn = document.getElementById("nextbtn");
+var alertdiv = document.querySelector(".alertdiv");
 
-// nextbtn.addEventListener("click",function(){
-//     alertdiv.style.opacity="1";
-// })
+nextbtn.addEventListener("click",function(){
+    alertdiv.style.display="flex";
+})
 
-// var deletetbtn = document.getElementById("deletetbtn");
-// deletetbtn.addEventListener("click",function(){
-//     alertdiv.style.display="flex";
-// });
+var deletetbtn = document.getElementById("deletetbtn");
+deletetbtn.addEventListener("click",function(){
+    alertdiv.style.display="none";
+});
 
 // QUESTION SECTION
 
-// const questionIcn = document.querySelectorAll(".questionIcn");
-// questionIcn.forEach(function(btn){
-//     btn.addEventListener("click",function(e){
-//         console.log(e.currentTarget )
-//         console.log("cbjgyfsuhkjdfvgfj")
-//     })
+const icn = document.querySelectorAll("span");
+// it will give collection of nodeslist
+console.log(icn)
+
+icn.forEach(icons => {
+    icons.addEventListener("click",function(e){
+        // e.preventDefault()
+        e.stopPropagation();
+        // console.log(e.currentTarget.classList)
+        e.currentTarget.classList.toggle("fa-times");
+
+        if(e.currentTarget.classList.contains("fa-times")){
+            // document.querySelector(".answer").style.display="flex"
+        }
+        else{
+            document.querySelector(".answer").style.display="none"
+
+        }
+    },false);
+});
+
+
+// document.querySelector(".questionSection").addEventListener("click",(e)=>{
+//     console.log(e.currentTarget.classList)
+//     // console.log(typeof e.currentTarget.classList)
+//     // console.log(e.currentTarget.classList[0])
+//     e.currentTarget.classList.add("fa-times");
+//     console.log(e)
 // })
