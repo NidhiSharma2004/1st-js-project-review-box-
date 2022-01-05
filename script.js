@@ -1,87 +1,76 @@
 
-function mainFun(){
-    
-changeImg();
-changeName();
-changeReview();
+
+
+function mainFun(){ 
+    changeImg();
+    changeName();
+    changeReview();
 }
 
 function previous(){
     prevImg();
     namePrev();   
-  
     prevReview();
 }
 
     //  ARRAY FOR IMAGES
-var images = new Array();
+var images = ["./assets/images/boy1.jpg","./assets/images/boy2.jpg","./assets/images/boy3.jpg","./assets/images/girl1.jpg","./assets/images/girl2.jpg"];
 var imgIndex = 0;
 var prevIndex = 4;
-
-images[0] = "./assets/images/boy1.jpg";
-images[1] = "./assets/images/boy2.jpg";
-images[2] = "./assets/images/boy3.jpg";
-images[3] = "./assets/images/girl1.jpg";
-images[4] = "./assets/images/girl2.jpg";
-
 var myImg = document.getElementById("images");
 
 // FORWARD IMAGE INDEX
 function changeImg() {
     if (imgIndex <= images.length - 1) {
+        console.log(imgIndex)
         myImg.src = images[imgIndex];
         imgIndex++;
+        console.log(imgIndex)
     }
     if(imgIndex==images.length){
         imgIndex = 0;
     }
      myImg.src=images[imgIndex]
+     console.log(myImg.src)
 }
 
 // PREVIOUS IMAGE INDEX
 function prevImg(){
-         if(prevIndex < images.length-1){
-  
+    if(prevIndex < images.length-1){
         myImg.src=images[prevIndex]
         prevIndex--;
     }
- 
     if(prevIndex == images.length-1 || prevIndex <-1){
         prevIndex=images.length-1;
         myImg.src=images[prevIndex]
         prevIndex--
     }
-  
 }
 
 document.getElementById("rightslider").addEventListener("click",mainFun)
 document.getElementById("leftslider").addEventListener("click",previous)
-
 document.getElementById("btn").addEventListener("click",mainFun)
 
+console.log(btn)
 
 // NAME CONTAINR
-var names = new Array();
-names[0] = "Nidhi";
-names[1] = "pinky bhaiya"
-names[2] = "black bhaiya"
-names[3] = "chasmish didi"
-names[4] = "white boy"
+var names = ["Nidhi","pinky bhaiya","black bhaiya","chasmish didi","white boy"];
 var nameIndx = 0;
-document.getElementById("personName").innerText = names[0]
+var myName = document.getElementById("personName")
+myName.innerText = names[0]
 
 // FORWARD NAME INDEX
 
 function changeName(arr){
     if(nameIndx < names.length){
-        document.getElementById("personName").innerText = names[nameIndx]
+      myName.innerText = names[nameIndx]
         nameIndx++
     }  
  document.getElementById("personName").innerText = names[nameIndx]
     if(nameIndx == names.length){
         nameIndx=0;
     } 
-    document.getElementById("personName").innerText = names[nameIndx]
+  myName.innerText = names[nameIndx]
 }
 
 var prevNameIndx = 4;
@@ -89,17 +78,15 @@ var prevNameIndx = 4;
  // PREVOIUS NAME INDEX
 function namePrev(){
     if(prevNameIndx < names.length-1){
-        document.getElementById("personName").innerText = names[prevNameIndx]
+      myName.innerText = names[prevNameIndx]
         prevNameIndx--
     }
     if(prevNameIndx == names.length-1 || prevNameIndx<-1){
         prevNameIndx= names.length-1
-        document.getElementById("personName").innerText = names[prevNameIndx]
+      myName.innerText = names[prevNameIndx]
         prevNameIndx--  
     }
 }
-
-
 // REVIEW CONTAINER
 
 var review = new Array();
@@ -118,20 +105,14 @@ myReview.innerText = review[0]
 
 function changeReview(arr){
     if(reviewInd < review.length){
-    
         reviewInd++
         myReview.innerText = review[reviewInd];
-    
     }  
- 
     if(reviewInd == review.length){
         reviewInd=0;
-        myReview.innerText = review[reviewInd]
-        
+        myReview.innerText = review[reviewInd]    
     } 
 }
-
-
  // PREVOIUS REVIEW INDEX
 var prevReviewIndx = 4;
 function prevReview(){
@@ -145,3 +126,57 @@ function prevReview(){
         prevReviewIndx--
     }
 }
+
+// NAVIGATION BAR
+var listContainer = document.querySelector(".listContainer")
+var hmbrgr = document.getElementById("hmbrgr"); 
+
+// HMBURGR ICON 
+var x = window.matchMedia("(max-width: 1000px)") 
+
+function chnageTheme(x){
+    if(x.matches){
+        listContainer.style.display = "none";
+        hmbrgr.style.display="flex"
+    }
+    else{
+        listContainer.style.display = "flex";
+        hmbrgr.style.display="none"
+    }
+}
+chnageTheme(x)
+x.addListener(chnageTheme);
+
+hmbrgr.addEventListener("click",function(e){
+    e.preventDefault()
+    hmbrgr.classList.toggle("fa-times")
+    if(hmbrgr.classList.contains("fa-times")){
+        document.querySelector(".rspons").style.display="flex"; 
+        document.querySelector(".rspons").style.color = "rgb(122, 34, 34)"
+    }else{
+     document.querySelector(".rspons").style.display="none"
+    }
+})
+
+// // MODAL PROJECT JS
+// var nextbtn = document.getElementById("nextbtn");
+// var alertdiv = document.querySelector(".alertdiv");
+
+// nextbtn.addEventListener("click",function(){
+//     alertdiv.style.opacity="1";
+// })
+
+// var deletetbtn = document.getElementById("deletetbtn");
+// deletetbtn.addEventListener("click",function(){
+//     alertdiv.style.display="flex";
+// });
+
+// QUESTION SECTION
+
+// const questionIcn = document.querySelectorAll(".questionIcn");
+// questionIcn.forEach(function(btn){
+//     btn.addEventListener("click",function(e){
+//         console.log(e.currentTarget )
+//         console.log("cbjgyfsuhkjdfvgfj")
+//     })
+// })
